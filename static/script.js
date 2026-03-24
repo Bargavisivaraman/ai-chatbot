@@ -275,3 +275,22 @@ function showToast(msg) {
 function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function escAttr(s) { return s.replace(/`/g,"'").replace(/\\/g,'\\\\'); }
+
+// ── THEME TOGGLE ──
+function toggleTheme() {
+  const body = document.body;
+  const icon = document.getElementById('themeIcon');
+  const isLight = body.classList.toggle('light');
+  icon.textContent = isLight ? '🌙' : '☀️';
+  localStorage.setItem('cleo_theme', isLight ? 'light' : 'dark');
+}
+
+// load saved theme on start
+(function() {
+  const saved = localStorage.getItem('cleo_theme');
+  if (saved === 'light') {
+    document.body.classList.add('light');
+    const icon = document.getElementById('themeIcon');
+    if (icon) icon.textContent = '🌙';
+  }
+})();

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bargavi AI — Chat</title>
+  <title>Cleo AI — Chat</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -16,7 +16,7 @@
   <div class="sidebar-top">
     <div class="sidebar-logo">
       <div class="logo-icon">✦</div>
-      <div class="logo-text">Bargavi <span>AI</span></div>
+      <div class="logo-text">Cleo<span> ✦</span></div>
     </div>
     <button class="new-chat-btn" onclick="newChat()">
       <span>+</span> New Chat
@@ -43,6 +43,9 @@
     <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
     <div class="topbar-title" id="topbarTitle">New Chat</div>
     <div class="topbar-right">
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
+        <span id="themeIcon">☀️</span>
+      </button>
       <div class="status-pill"><span class="status-dot"></span>online</div>
     </div>
   </div>
@@ -52,8 +55,8 @@
     <!-- Welcome screen -->
     <div class="welcome" id="welcome">
       <div class="welcome-icon">✦</div>
-      <h1 class="welcome-title">Hi, I'm Bargavi's AI</h1>
-      <p class="welcome-sub">Ask me anything — I'm powered by GPT-3.5</p>
+      <h1 class="welcome-title">Hey, I'm Cleo ✦</h1>
+      <p class="welcome-sub">Your smart, friendly AI — powered by GPT-3.5</p>
       <div class="suggestion-chips">
         <button class="chip" onclick="sendSuggestion(this)">Explain machine learning 🤖</button>
         <button class="chip" onclick="sendSuggestion(this)">Write a Python function 🐍</button>
@@ -70,7 +73,7 @@
       <textarea
         id="msgInput"
         class="msg-input"
-        placeholder="Message Bargavi AI..."
+        placeholder="Message Cleo..."
         rows="1"
         onkeydown="handleKey(event)"
         oninput="autoResize(this)"

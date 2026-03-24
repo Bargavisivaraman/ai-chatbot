@@ -1,3 +1,38 @@
+/* ── LIGHT THEME ── */
+body.light {
+  --bg:         #f8f7ff;
+  --sidebar-bg: #f0eefe;
+  --surface:    #ffffff;
+  --surface2:   #f5f3ff;
+  --border:     rgba(139,92,246,0.15);
+  --purple:     #7c3aed;
+  --purple2:    #6d28d9;
+  --pink:       #db2777;
+  --text:       #1a1a2e;
+  --muted:      rgba(80,60,120,0.55);
+  --user-bg:    linear-gradient(135deg, #7c3aed, #5b21b6);
+  --ai-bg:      #ffffff;
+}
+body.light .sidebar { box-shadow: 2px 0 12px rgba(139,92,246,0.08); }
+body.light .topbar { background: rgba(248,247,255,0.9); }
+body.light .msg-wrap.ai .msg-bubble { border-color: rgba(139,92,246,0.12); box-shadow: 0 2px 8px rgba(139,92,246,0.06); }
+body.light .input-wrap { background: #ffffff; box-shadow: 0 2px 12px rgba(139,92,246,0.08); }
+body.light .chip { background: #ffffff; }
+body.light .session-item:hover { background: rgba(139,92,246,0.06); }
+body.light .welcome-icon { background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(219,39,119,0.08)); }
+body.light pre { background: #f3f0ff !important; border-color: rgba(139,92,246,0.15) !important; }
+body.light code:not(pre code) { background: rgba(139,92,246,0.08); }
+
+/* ── THEME TOGGLE ── */
+.theme-toggle {
+  width: 34px; height: 34px; border-radius: 8px;
+  background: rgba(139,92,246,0.1);
+  border: 1px solid rgba(139,92,246,0.2);
+  cursor: pointer; display: flex; align-items: center;
+  justify-content: center; font-size: 1rem;
+  transition: all 0.2s;
+}
+.theme-toggle:hover { background: rgba(139,92,246,0.18); transform: scale(1.05); }
 /* =============================================
    AI CHATBOT — style.css  (Lovable theme)
    by Bargavi Sivaraman
