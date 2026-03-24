@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bargavi AI — Chat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <div class="sidebar-logo">
+      <div class="logo-icon">✦</div>
+      <div class="logo-text">Bargavi <span>AI</span></div>
+    </div>
+    <button class="new-chat-btn" onclick="newChat()">
+      <span>+</span> New Chat
+    </button>
+  </div>
+
+  <div class="sessions-label">Recent Chats</div>
+  <div class="sessions-list" id="sessionsList"></div>
+
+  <div class="sidebar-footer">
+    <div class="model-badge">
+      <span class="model-dot"></span>
+      GPT-3.5 Turbo
+    </div>
+    <div class="built-by">built by bargavi sivaraman</div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+    <div class="topbar-title" id="topbarTitle">New Chat</div>
+    <div class="topbar-right">
+      <div class="status-pill"><span class="status-dot"></span>online</div>
+    </div>
+  </div>
+
+  <!-- CHAT AREA -->
+  <div class="chat-area" id="chatArea">
+    <!-- Welcome screen -->
+    <div class="welcome" id="welcome">
+      <div class="welcome-icon">✦</div>
+      <h1 class="welcome-title">Hi, I'm Bargavi's AI</h1>
+      <p class="welcome-sub">Ask me anything — I'm powered by GPT-3.5</p>
+      <div class="suggestion-chips">
+        <button class="chip" onclick="sendSuggestion(this)">Explain machine learning 🤖</button>
+        <button class="chip" onclick="sendSuggestion(this)">Write a Python function 🐍</button>
+        <button class="chip" onclick="sendSuggestion(this)">What is React? ⚛️</button>
+        <button class="chip" onclick="sendSuggestion(this)">Help me debug code 🐛</button>
+      </div>
+    </div>
+    <div class="messages" id="messages"></div>
+  </div>
+
+  <!-- INPUT BAR -->
+  <div class="input-bar">
+    <div class="input-wrap">
+      <textarea
+        id="msgInput"
+        class="msg-input"
+        placeholder="Message Bargavi AI..."
+        rows="1"
+        onkeydown="handleKey(event)"
+        oninput="autoResize(this)"
+      ></textarea>
+      <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+    <div class="input-hint">Enter to send · Shift+Enter for new line</div>
+  </div>
+
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
